@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Section</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="faq">
+    <h1>Frequently Asked Questions</h1>
+    <div class="faq-item">
+      <div class="question" onclick="toggleAnswer(this)">
+        What is this FAQ about? <span class="arrow">&#9660;</span>
+      </div>
+      <div class="answer">
+        This FAQ provides answers to common questions about our services.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question" onclick="toggleAnswer(this)">
+        How can I contact support? <span class="arrow">&#9660;</span>
+      </div>
+      <div class="answer">
+        You can contact support via email at support@example.com or call us at +123 456 7890.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="question" onclick="toggleAnswer(this)">
+        What payment methods do you accept? <span class="arrow">&#9660;</span>
+      </div>
+      <div class="answer">
+        We accept credit cards, debit cards, and PayPal.
+      </div>
+    </div>
+  </section>
+  <script >
+    function toggleAnswer(element) {
+  const answer = element.nextElementSibling;
+  const arrow = element.querySelector('.arrow');
+  if (answer.style.display === 'block') {
+    answer.style.display = 'none';
+    arrow.innerHTML = '&#9660;';
+  } else {
+    answer.style.display = 'block';
+    arrow.innerHTML = '&#9650;';
+  }
+}
+
+  </script>
+</body>
+</html>
