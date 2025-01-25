@@ -23,7 +23,7 @@ function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center gap-10 h-screen bg-cover bg-center" style={{ backgroundImage: "url('../src/assets/HomePageBg.jpg')" }}>
+      <section className="flex flex-col items-center justify-center gap-10 h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')" }}>
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className=" transparent backdrop-blur-sm border border-white/20 0 p-10 rounded-xl text-center text-white z-10">
           <h1 className="text-5xl text-nowrap font-bold mb-4">Experience Luxury Like Never Before</h1>
