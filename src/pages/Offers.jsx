@@ -48,7 +48,7 @@ function Offers() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {offers.map((offer, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div key={index} className="bg-white/20 border border-white/60 rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
                 <div className="bg-accent text-white px-3 py-1 rounded-full text-sm inline-block mb-4">
                   Save {offer.savings}

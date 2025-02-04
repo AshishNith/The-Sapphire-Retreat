@@ -15,24 +15,7 @@ function Booking() {
     specialRequests: ''
   });
 
-  const roomTypes = {
-    deluxe: {
-      name: 'Deluxe Room',
-      price: 299,
-      description: 'Spacious room with city view'
-    },
-    executive: {
-      name: 'Executive Suite',
-      price: 499,
-      description: 'Luxury suite with separate living area'
-    },
-    family: {
-      name: 'Family Room',
-      price: 399,
-      description: 'Perfect for families with children'
-    }
-  };
-
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -227,7 +210,7 @@ function Booking() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary text-white px-6 py-3 rounded hover:bg-opacity-90 mt-4"
+                className="w-full bg-primary border hover:bg-orange-500 text-white px-6 py-3 rounded hover:bg-opacity-90 mt-4"
               >
                 Confirm Booking
               </button>
