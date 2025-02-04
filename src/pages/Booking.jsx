@@ -2,6 +2,25 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
+// Define roomTypes before using it
+const roomTypes = {
+  deluxe: {
+    name: 'Deluxe Room',
+    description: 'Spacious room with ocean view',
+    price: 200
+  },
+  standard: {
+    name: 'Standard Room',
+    description: 'Comfortable room with garden view',
+    price: 150
+  },
+  suite: {
+    name: 'Suite',
+    description: 'Luxurious suite with private balcony',
+    price: 300
+  }
+};
+
 function Booking() {
   const [checkIn, setCheckIn] = useState(new Date());
   const [checkOut, setCheckOut] = useState(new Date());
@@ -15,7 +34,6 @@ function Booking() {
     specialRequests: ''
   });
 
-  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -52,15 +70,11 @@ function Booking() {
         <h1 className="text-4xl font-bold text-center mb-12 mt-10">Book Your Stay</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Booking Form */}
           <div className="md:col-span-2">
             <form onSubmit={handleSubmit} className="space-y-6 bg-white/20 p-6 rounded-lg shadow">
-              {/* Dates and Guests */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Check-in Date
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Check-in Date</label>
                   <DatePicker
                     selected={checkIn}
                     onChange={date => setCheckIn(date)}
@@ -69,9 +83,7 @@ function Booking() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Check-out Date
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Check-out Date</label>
                   <DatePicker
                     selected={checkOut}
                     onChange={date => setCheckOut(date)}
@@ -83,9 +95,7 @@ function Booking() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Number of Guests
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Number of Guests</label>
                   <select
                     value={guests}
                     onChange={(e) => setGuests(Number(e.target.value))}
@@ -97,9 +107,7 @@ function Booking() {
                   </select>
                 </div>
                 <div>
-                  <label className="block  text-sm font-medium text-gray-700 mb-2">
-                    Room Type
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Room Type</label>
                   <select
                     value={roomType}
                     onChange={(e) => setRoomType(e.target.value)}
@@ -115,9 +123,7 @@ function Booking() {
               {/* Personal Information */}
               <div className="grid grid-cols-1  md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                   <input
                     type="text"
                     name="firstName"
@@ -128,9 +134,7 @@ function Booking() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
                   <input
                     type="text"
                     name="lastName"
@@ -144,9 +148,7 @@ function Booking() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block  text-sm font-medium text-gray-700 mb-2">
-                    Email
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -157,9 +159,7 @@ function Booking() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                   <input
                     type="tel"
                     name="phone"
@@ -172,9 +172,7 @@ function Booking() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Special Requests
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Special Requests</label>
                 <textarea
                   name="specialRequests"
                   value={formData.specialRequests}
